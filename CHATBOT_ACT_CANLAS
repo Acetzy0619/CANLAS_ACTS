@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner aye = new Scanner(System.in);
+
+        System.out.println("School ChatBot: Hi there! How can I help you with school today?");
+        System.out.print("You: ");
+
+        while (true) {
+            String userMessage = aye.nextLine().toLowerCase();
+
+            if (userMessage.contains("hello") || userMessage.contains("hi")) {
+                System.out.println("School ChatBot: Hello! How can I assist you?");
+            } else if (userMessage.contains("class") || userMessage.contains("subject")) {
+                System.out.println("School ChatBot: What class or subject are you inquiring about?");
+            } else if (userMessage.contains("homework") || userMessage.contains("assignment")) {
+                System.out.println("School ChatBot: Do you need help with a specific homework or assignment?");
+            } else if (userMessage.contains("exam") || userMessage.contains("test")) {
+                System.out.println("School ChatBot: How can I assist you with your exams or tests?");
+            } else if (userMessage.contains("bye") || userMessage.contains("exit")) {
+                System.out.println("School ChatBot: Goodbye! If you have more questions, feel free to return.");
+                break;
+            } else {
+                System.out.println("School ChatBot: I'm not sure how to respond to that. Can you please be more specific?");
+            }
+
+            System.out.print("You: ");
+        }
+
+        aye.close();
+    }
+}
