@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class Main {
+    
+        public static boolean Checks(String aye) 
+        {       
+        if (aye.contains(",") && !aye.matches(".*\\d.*") && !aye.matches(".*\\d+\\.\\d+.*") && !aye.matches(".*[^a-zA-Z0-9,].*")) {
+            return true;
+        }
+        return false;
+        }
+        
+    public static void main(String[] args) 
+    {
+        Scanner dre = new Scanner(System.in);
+        System.out.println("Type any words, seperated by comma is required:");
+
+        String typing = dre.nextLine();
+
+        if (!Checks(typing)) 
+        {
+            System.out.println("Check Again, Invalid input.");
+            main(args);
+        } 
+        else 
+        {
+            String[] maglagay = typing.split(",");
+            Arrays.sort(maglagay);
+            
+                System.out.println("Sorted words: " + Arrays.toString(maglagay));
+                    System.out.println("Repeat Program? type yes or no:");
+            
+                        String option = dre.nextLine().toLowerCase();
+
+            if (option.equals("yes")) 
+            {
+                main(args);
+            } else {
+                System.out.println("Exiting program.");
+            }
+        }
+    }
+
+}
